@@ -1,4 +1,4 @@
-# -Atwork-install
+# Atwork-install
 Debian XFCE install for work computer in my locker  
 A list of post-install customizations is listed after the initial install instructions. Includes commands to copy/paste in terminal and internet links.
 
@@ -43,8 +43,8 @@ adduser your-username sudo
 ### ⬇️ Clone Repo
 ```bash
 sudo apt install git
-git clone https://github.com/somogibbs/debian-install.git
-cd debian-install
+git clone https://github.com/somogibbs/atwork-install.git
+cd atwork-install
 chmod +x install.sh
 ./install.sh
 ```
