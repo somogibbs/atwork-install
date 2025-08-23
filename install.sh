@@ -34,11 +34,8 @@ sudo apt install -y \
 
 # === 🧑‍💻 Productivity & Browsing ===
 sudo apt install -y \
-    libreoffice-writer firefox-esr synaptic
+    firefox-esr synaptic
     
-# === 🎮 Installing Fallout GRUB theme ===
-wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash  
-
 # === 📁 Creating folders ===
 mkdir ~/.wallpapers ~/.themes ~/AppImages
 
@@ -68,6 +65,9 @@ curl -1sLf \
   | sudo -E bash
 sudo apt update
 sudo apt install coolercontrol
+
+# === 🎮 Installing Fallout GRUB theme ===
+wget -O - https://github.com/shvchk/fallout-grub-theme/raw/master/install.sh | bash  
 
 # === Rebooting System ===
 sudo shutdown -r now
