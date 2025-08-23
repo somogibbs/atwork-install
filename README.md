@@ -1,6 +1,6 @@
-# Atwork-install
-Debian XFCE install for work computer in my locker  
-A list of post-install customizations is listed after the initial install instructions. Includes commands to copy/paste in terminal and internet links.
+## 🐧 Debian Install
+
+Standard Readme for my Debian Linux install with either GNOME, XFCE, or LXQT. A list of post-install customizations is listed after the initial install instructions in both commands and internet links.
 
 ---
 
@@ -23,15 +23,20 @@ A list of post-install customizations is listed after the initial install instru
 - [🐬 Dolphin Emulator](#-github-dolphin-emulator-appimage)
 - [🗂️ Emulators in Debian Repo](#-list-of-emulators-in-debian-repo)
 - [🎮 APT Emulators](#-psx-ps2-gc-switch-emulators-in-apt)
-- [🧪 Steam CLI Install](#-steam-cli-install)
+- [🕹️ Steam CLI Install](#-steam-cli-install)
+- [🗂️ Create Custom Folders](#-create-custom-folders)
+- [🧰 Install CoolerControl](#-install-coolercontrol)
+- [📦 Liquorix Kernel](#-liquorix-kernel-install)
+- [⚙️ Download TinyMediaManager](#-download-tinymediamanager)
 
 ---
 
 ## ⚙️ Git and Run the Script  
 
-Before anything be aware that the trixie installer will comment out your sources when installing from a usb! WTF!  
-So to install git run `sudo apt edit-sources` then make sure to remove the # (hashtag) from the sources line or change  
-the whole first line to `deb http://deb.debian.org/debian trixie main contrib non-free non-free-firmware`    
+Before anything be aware that the trixie installer will comment out your apt sources when installing from a usb! WTF! The source list also
+doesn't include the web link to the Debian repo. So to install git run `sudo apt edit-sources`, pick nano as the editor, then add this line  
+`deb http://deb.debian.org/debian trixie main contrib non-free non-free-firmware` with no hashtag (#) at the beginning.  
+`Ctrl+o` to save and `Ctrl+x` to exit.
 
 ### 🔑 Set up Sudo
 If you enabled root during the standard.iso install:
@@ -40,11 +45,11 @@ apt install sudo
 adduser your-username sudo
 ```
 
-### ⬇️ Clone Repo
+### ⬇️ Clone Repo and Run Install Script
 ```bash
 sudo apt install git
-git clone https://github.com/somogibbs/atwork-install.git
-cd atwork-install
+git clone https://github.com/somogibbs/debian-install.git
+cd debian-install
 chmod +x install.sh
 ./install.sh
 ```
@@ -186,7 +191,7 @@ Note that pcsx2 is pretty out of date
 
 ---
 
-## 🧪 Steam CLI Install
+## 🕹️ Steam CLI Install 
 
 Edit your `/etc/apt/sources.list` to include "non-free" sources  
 ```bash
@@ -215,4 +220,43 @@ Search backports by adding -t trixie-backports runner:
 sudo apt search mesa-vulkan-drivers -t trixie-backports
 sudo apt install mesa-vulkan-drivers -t trixie-backports
 ```
-Note - Trixie released August 2025 so backports won't be available immediately.
+Note - Trixie released August 2025 so backports won't be available immediately. 
+
+---
+
+## 🗂️ Create Custom Folders 
+Create custom directories (if not present) and move files to new locations
+
+- Themes → `mkdir -p ~/.themes/` 
+- Icons & Cursors → `mkdir -p ~/.icons/` 
+- Fonts → `mkdir -p ~/.fonts/` 
+- Wallpapers → `mkdir -p ~/.wallpapers/`  
+- AppImages → `mkdir -p ~/.appimages` 
+- XFCE4 Terminal Themes → `mkdir -p ~/.local/share/xfce4/terminal/colorschemes` 
+- Rofi Themes → `mkdir -p ~/.config/rofi` 
+
+---
+
+## 🧰 Install CoolerControl
+- Get some requirements 
+`sudo apt install curl apt-transport-https`
+- Use curl to get repo
+`curl -1sLf \
+  'https://dl.cloudsmith.io/public/coolercontrol/coolercontrol/setup.deb.sh' \
+  | sudo -E bash`
+- Update repo and install
+`sudo apt update`
+`sudo apt install coolercontrol`
+
+---
+
+## 📦 Liquorix Kernel Install
+`curl -s 'https://liquorix.net/install-liquorix.sh' | sudo bash`
+ 
+---
+
+## ⚙️ Download TinyMediaManager    
+Check the version if problems occur  
+`wget https://release.tinymediamanager.org/v5/dist/tinyMediaManager-5.1.8-linux-amd64.tar.xz`
+
+---
