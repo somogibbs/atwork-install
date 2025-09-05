@@ -1,5 +1,5 @@
 #!/bin/bash
-# Debian XFCE setup script for older laptops
+# Debian XFCE setup script for my work locker PC
 
 # Fix up repository
 echo "deb http://deb.debian.org/debian trixie main contrib non-free non-free-firmware" | sudo tee -a /etc/apt/sources.list
