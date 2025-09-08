@@ -10,14 +10,14 @@ sudo apt update
 # === 🧰 System Utilities ===
 sudo apt install -y \
     gnome-disk-utility gparted gsmartcontrol lshw preload gamemode \
-    btop cpu-x psensor gnome-text-editor
+    btop cpu-x psensor xarchiver thunar-archive-plugin
 
 # === 🎮 User Interface & Desktop ===
 sudo apt install -y \
     xfce4 xfce4-goodies xfce4-power-manager variety ranger \
     package-update-indicator obsidian-icon-theme numix-icon-theme \
     papirus-icon-theme fonts-firacode fonts-jetbrains-mono fonts-recommended \
-    cmatrix hollywood
+    cmatrix hollywood cava 
 
 # === 🔒 Security & Backup ===
 sudo apt install -y \
