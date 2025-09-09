@@ -10,14 +10,15 @@ sudo apt update
 # === 🧰 System Utilities ===
 sudo apt install -y \
     gnome-disk-utility gparted gsmartcontrol lshw preload gamemode \
-    btop cpu-x psensor xarchiver thunar-archive-plugin
+    btop cpu-x psensor xarchiver thunar-archive-plugin bleachbit
 
 # === 🎮 User Interface & Desktop ===
 sudo apt install -y \
     xfce4 xfce4-goodies xfce4-power-manager variety ranger \
-    package-update-indicator obsidian-icon-theme numix-icon-theme \
-    papirus-icon-theme fonts-firacode fonts-jetbrains-mono fonts-recommended \
-    cmatrix hollywood cava 
+    package-update-indicator obsidian-icon-theme moka-icon-theme \
+    papirus-icon-theme    fonts-recommended fonts-jetbrains-mono yaru-theme-gtk 
+  orchis-gtk-theme greybird-gtk-theme breeze-gtk-theme /
+  darkcold-gtk-theme cmatrix hollywood cava 
 
 # === 🔒 Security & Backup ===
 sudo apt install -y \
